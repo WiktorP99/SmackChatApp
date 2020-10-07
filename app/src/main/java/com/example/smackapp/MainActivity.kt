@@ -1,5 +1,6 @@
 package com.example.smackapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -30,7 +31,8 @@ class MainActivity : AppCompatActivity() {
     }
     fun loginBtnNavClicked(view: View)
     {
-
+        val loginIntent = Intent(this, LoginActivity::class.java)
+        startActivity(loginIntent)
     }
     fun addChannelClicked(view: View)
     {
