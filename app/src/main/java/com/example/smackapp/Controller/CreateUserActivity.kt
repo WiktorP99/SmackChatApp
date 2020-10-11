@@ -1,11 +1,12 @@
-package com.example.smackapp
+package com.example.smackapp.Controller
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.smackapp.R
+import com.example.smackapp.Services.AuthService
 import kotlinx.android.synthetic.main.activity_create_user.*
-import kotlin.random.Random
 
 class CreateUserActivity : AppCompatActivity() {
 
@@ -35,6 +36,7 @@ class CreateUserActivity : AppCompatActivity() {
     }
     fun generateColorClicked(view: View)
     {
+
         val random = java.util.Random()
         val r = random.nextInt(255)
         val g = random.nextInt(255)
@@ -50,6 +52,12 @@ class CreateUserActivity : AppCompatActivity() {
     }
     fun createUserClicked (view: View)
     {
+        AuthService.registerUser(this, "szymon123@idiota.pl", "okidoki"){complete ->
+            if(complete)
+            {
 
+            }
+
+        }
     }
 }
